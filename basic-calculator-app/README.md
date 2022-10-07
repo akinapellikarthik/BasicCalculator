@@ -53,4 +53,4 @@ yarn create react-app <app-name> --template typescript
 
 ### material UI command
 
-
+yarn add @mui/material @emotion/react @emotion/styled
