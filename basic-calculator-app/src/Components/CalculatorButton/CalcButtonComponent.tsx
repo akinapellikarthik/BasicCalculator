@@ -1,5 +1,16 @@
+import { Button } from "@mui/material";
 import React from "react";
 
-export const CalcButtonComponent: React.FC<{}> = () => {
-  return <div>Hello world</div>;
+export interface CalcSymbol {
+  symbol: string;
+}
+
+export const CalcButtonComponent: React.FC<CalcSymbol> = ({
+  symbol,
+}: CalcSymbol) => {
+  return (
+    <React.Fragment>
+      <Button variant="outlined">{symbol}</Button>
+    </React.Fragment>
+  );
 };

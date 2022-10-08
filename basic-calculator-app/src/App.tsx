@@ -5,7 +5,8 @@ import { CalcButtonComponent } from './Components/CalculatorButton/CalcButtonCom
 
 function App() {
   return (
-    <CalcButtonComponent />
+    <CalcButtonComponent symbol='+' />
+    
   );
 }
 
