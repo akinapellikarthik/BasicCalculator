@@ -13,19 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Button } from "@mui/material";
-import React from "react";
+import { TextField } from "@mui/material";
 
-export interface CalcSymbol {
-  symbol: string;
-}
-
-export const CalcButtonComponent: React.FC<CalcSymbol> = ({
-  symbol,
-}: CalcSymbol) => {
+//TODO: This component has to read data from state
+export const CalculatorTextBoxComponent: React.FC<{}> = () => {
   return (
-    <React.Fragment>
-      <Button variant="outlined">{symbol}</Button>
-    </React.Fragment>
+    <>
+      <TextField
+        id="outlined-read-only-input"
+        label="Basic Calculator"
+        defaultValue="123"
+        InputProps={{
+          readOnly: true,
+        }}
+      />
+    </>
   );
 };
