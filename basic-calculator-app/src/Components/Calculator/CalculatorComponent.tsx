@@ -18,8 +18,13 @@ import React from "react";
 import { CalcButtonComponent } from "../CalculatorButton/CalcButtonComponent";
 import { CalConstants } from "../../CalConstants";
 import { CalculatorTextBoxComponent } from "../CalculatorTextBox/CalculatorTextBoxComponent";
+import { useSelector } from "react-redux";
+import { RootState } from "../../Store";
 
 export const CalculatorComponent: React.FC<{}> = () => {
+  const {result,firstValue} = useSelector(
+    (state: RootState) => state.CalculatorSlice
+  );
   return (
     <>
       {/*TODO: Move the padding to a different style */}
@@ -47,7 +52,13 @@ export const CalculatorComponent: React.FC<{}> = () => {
             <CalcButtonComponent symbol={item} />
           ))}
         </Grid>
+        <Grid item xs={8}>
+          {CalConstants.calBtnSetValues.map((item) => (
+            <CalcButtonComponent symbol={item} />
+          ))}
+        </Grid>
       </Grid>
+      {firstValue}
     </>
   );
 };

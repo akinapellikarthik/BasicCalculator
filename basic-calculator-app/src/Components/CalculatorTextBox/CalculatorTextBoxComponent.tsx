@@ -14,18 +14,25 @@
  * limitations under the License.
  */
 import { TextField } from "@mui/material";
+import { useSelector } from "react-redux";
+import { RootState } from "../../Store";
 
-//TODO: This component has to read data from state
 export const CalculatorTextBoxComponent: React.FC<{}> = () => {
+  const {result,firstValue,secondValue} = useSelector(
+    (state: RootState) => state.CalculatorSlice
+  );
+
   return (
     <>
       <TextField
         id="outlined-read-only-input"
         label="Basic Calculator"
-        defaultValue="123"
-        InputProps={{
-          readOnly: true,
-        }}
+        value={firstValue}
+      />
+      <TextField
+        id="outlined-read-only-input"
+        label="Basic Calculator"
+        value={secondValue}
       />
     </>
   );
